@@ -10,14 +10,18 @@ export class Componente1Component implements OnInit {
   private mensajeAleatorio: string;
   private isDisplay: boolean;
   private isDisplayButton1: boolean;
+  private isDisplayImagen: boolean;
   private textoboton2: string;
   private textoboton3: string;
+  private textoboton4: string;
 
   constructor(private generadorService: GeneradorService) {
     this.isDisplay = true;
+    this.isDisplayImagen = false;
     this.isDisplayButton1 = true;
     this.textoboton2 = 'Ocultar Mensaje';
     this.textoboton3 = 'Ocultar boton generador';
+    this.textoboton4 = 'Mostrar Imagen';
   }
 
   ngOnInit() {
@@ -49,5 +53,14 @@ export class Componente1Component implements OnInit {
       this.textoboton3 = 'Mostrar boton generador';
     }
     return this.isDisplayButton1 = !this.isDisplayButton1;
+  }
+
+  private displayImagen() {
+    if (!this.isDisplayImagen) {
+      this.textoboton4 = 'Ocultar Imagen';
+    } else {
+      this.textoboton4 = 'Mostrar Imagen';
+    }
+    return this.isDisplayImagen = !this.isDisplayImagen;
   }
 }

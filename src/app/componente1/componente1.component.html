@@ -5,3 +5,8 @@
 <button (click)="setDisplayMesage()">{{textoboton2}}</button>
 <br>
 <button (click)="displayButton1()">{{textoboton3}}</button>
+<br>
+<button (click)="displayImagen()">{{textoboton4}}</button>
+<div *ngIf="isDisplayImagen">
+<img src="/assets/imagenes/java.jpg" alt="Imagen no encontrada" >
+</div>
