@@ -1,4 +1,5 @@
 <button (click)="getWordGenerated()" id="boton">Generar mensaje</button>
 <br>
-<label for="boton" appDirectivamouse>Mensaje: {{mensajeAleatorio}}</label><br>
+<label for="boton" appDirectivamouse *ngIf="isDisplay">Mensaje: {{mensajeAleatorio}}</label><br>
 <hr>
+<button (click)="setDisplayMesage()">{{textoboton2}}</button>
