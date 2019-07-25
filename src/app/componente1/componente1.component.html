@@ -1,12 +1,16 @@
-<button (click)="getWordGenerated()" id="boton" *ngIf="isDisplayButton1">Generar mensaje</button>
-<br>
-<label for="boton" appDirectivamouse *ngIf="isDisplay">Mensaje: {{mensajeAleatorio}}</label><br>
-<hr>
-<button (click)="setDisplayMesage()">{{textoboton2}}</button>
-<br>
-<button (click)="displayButton1()">{{textoboton3}}</button>
-<br>
-<button (click)="displayImagen()">{{textoboton4}}</button>
-<div *ngIf="isDisplayImagen">
-<img src="/assets/imagenes/java.jpg" alt="Imagen no encontrada" >
+<div *ngIf="isDisplayPlantilla">
+  <button (click)="getWordGenerated()" id="boton" *ngIf="isDisplayButton1">Generar mensaje</button>
+  <br>
+  <label for="boton" appDirectivamouse *ngIf="isDisplay">Mensaje: {{mensajeAleatorio}}</label><br>
+  <hr>
+  <button (click)="setDisplayMesage()">{{textoboton2}}</button>
+  <br>
+  <button (click)="displayButton1()">{{textoboton3}}</button>
+  <br>
+  <button (click)="displayImagen()">{{textoboton4}}</button>
+  <div *ngIf="isDisplayImagen">
+    <img src="/assets/imagenes/java.jpg" alt="Imagen no encontrada">
+  </div>
 </div>
+<hr>
+<button (click)="displayPlantilla()">{{textoboton5}}</button>
