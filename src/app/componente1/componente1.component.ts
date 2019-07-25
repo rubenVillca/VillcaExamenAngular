@@ -16,12 +16,14 @@ export class Componente1Component implements OnInit {
   private textoboton3: string;
   private textoboton4: string;
   private textoboton5: string;
+  private isDisplayEasterEggs: boolean;
 
   constructor(private generadorService: GeneradorService) {
     this.isDisplay = true;
     this.isDisplayImagen = false;
     this.isDisplayButton1 = true;
     this.isDisplayPlantilla = true;
+    this.isDisplayEasterEggs = false;
     this.textoboton2 = 'Ocultar Mensaje';
     this.textoboton3 = 'Ocultar boton generador';
     this.textoboton4 = 'Mostrar Imagen';
@@ -47,7 +49,9 @@ export class Componente1Component implements OnInit {
     } else {
       this.textoboton2 = 'Mostrar mensaje';
     }
-    return this.isDisplay = !this.isDisplay;
+    this.isDisplay = !this.isDisplay;
+    this.verifyEasterEggs();
+    return this.isDisplay;
   }
 
   private displayButton1() {
@@ -56,7 +60,9 @@ export class Componente1Component implements OnInit {
     } else {
       this.textoboton3 = 'Mostrar boton generador';
     }
-    return this.isDisplayButton1 = !this.isDisplayButton1;
+    this.isDisplayButton1 = !this.isDisplayButton1;
+    this.verifyEasterEggs();
+    return this.isDisplayButton1;
   }
 
   private displayImagen() {
@@ -65,7 +71,9 @@ export class Componente1Component implements OnInit {
     } else {
       this.textoboton4 = 'Mostrar Imagen';
     }
-    return this.isDisplayImagen = !this.isDisplayImagen;
+    this.isDisplayImagen = !this.isDisplayImagen;
+    this.verifyEasterEggs();
+    return this.isDisplayImagen;
   }
 
   private displayPlantilla() {
@@ -74,6 +82,17 @@ export class Componente1Component implements OnInit {
     } else {
       this.textoboton5 = 'Mostrar Plantilla';
     }
-    return this.isDisplayPlantilla = !this.isDisplayPlantilla;
+
+    this.isDisplayPlantilla = !this.isDisplayPlantilla;
+    this.verifyEasterEggs();
+    return this.isDisplayPlantilla;
+  }
+
+  private verifyEasterEggs() {
+    if (this.isDisplayImagen && this.isDisplay && this.isDisplayPlantilla && this.isDisplayButton1) {
+      this.isDisplayEasterEggs = true;
+    } else {
+      this.isDisplayEasterEggs = false;
+    }
   }
 }
