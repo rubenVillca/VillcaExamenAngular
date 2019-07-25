@@ -6,11 +6,13 @@ import {Componente1Component} from './componente1/componente1.component';
 import {GeneradorService} from './service/generador.service';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
+import { DirectivamouseDirective } from './directiva/directivamouse.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    Componente1Component
+    Componente1Component,
+    DirectivamouseDirective
   ],
   imports: [
     BrowserModule
